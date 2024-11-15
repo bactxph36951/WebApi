@@ -17,8 +17,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositorie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebMVC", "WebMVC\WebMVC.csproj", "{078C4CB5-6432-4695-ADB0-B4A30D22DAE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin", "Admin\Admin.csproj", "{78D447BB-D668-488C-81A3-76E8427B7D21}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Database", "1.Database", "{0157ABFA-0FB2-4BF3-B203-1B46268161CA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Domain", "2.Domain", "{7C138863-0562-4B61-B541-B58308A6CA6A}"
@@ -57,10 +55,6 @@ Global
 		{078C4CB5-6432-4695-ADB0-B4A30D22DAE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{078C4CB5-6432-4695-ADB0-B4A30D22DAE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{078C4CB5-6432-4695-ADB0-B4A30D22DAE1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{78D447BB-D668-488C-81A3-76E8427B7D21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{78D447BB-D668-488C-81A3-76E8427B7D21}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{78D447BB-D668-488C-81A3-76E8427B7D21}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{78D447BB-D668-488C-81A3-76E8427B7D21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

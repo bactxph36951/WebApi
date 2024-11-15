@@ -1,4 +1,5 @@
 ﻿using Dtos.Products;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
@@ -11,5 +12,6 @@ namespace Dtos.Categories
             .GetField(Status.ToString())?
             .GetCustomAttribute<DisplayAttribute>()?.Name ?? Status.ToString();
         public List<ProductDto>? Products { get; set; }
+        public IEnumerable<SelectListItem>? StatusList { get; set; }
     }
 }

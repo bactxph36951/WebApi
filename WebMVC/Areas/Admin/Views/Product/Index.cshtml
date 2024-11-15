@@ -1,0 +1,132 @@
+﻿@using Dtos.Products
+@model List<ProductDto>
+
+@{
+    ViewData["Title"] = "Sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section css {
+    <link rel="stylesheet" href="/assets/plugins/data-tables/css/datatables.min.css">
+}
+
+<section class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ breadcrumb ] start -->
+                        @* <div class="page-header">
+                            <div class="page-block">
+                                <div class="row align-items-center">
+                                    <div class="col-md-12">
+                                        <div class="page-header-title">
+                                            <h5 class="m-b-10">Basic Table Sizes</h5>
+                                        </div>
+                                        <ul class="breadcrumb">
+                                            <li class="breadcrumb-item">
+                                                <a href="index.html">
+                                                    <i class="feather icon-home"></i>
+                                                </a>
+                                            </li>
+                                            <li class="breadcrumb-item"><a href="#!">Data Table</a></li>
+                                            <li class="breadcrumb-item"><a href="#!">Basic Initialization</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> *@
+                        <!-- [ breadcrumb ] end -->
+                        <!-- [ Main Content ] start -->
+
+                        <div class="row">
+                            <!-- Zero config table start -->
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Zero Configuration</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="dt-responsive table-responsive">
+                                            <table id="simpletable" class="table table-striped table-bordered nowrap">
+                                                <thead>
+                                                    <tr>
+                                                        <th>STT</th>
+                                                        <th>Tên</th>
+                                                        <th>Giá</th>
+                                                        <th>Ảnh</th>
+                                                        <th>Thông tin</th>
+                                                        <th colspan="2">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @for (int i = 0; i < Model.Count; i++)
+                                                    {
+                                                        <tr>
+                                                            <td>@(i + 1)</td> <!-- Số thứ tự -->
+                                                            <td>@Model[i].Name</td>
+                                                            <td>@Model[i].Price</td>
+                                                            <td>@Model[i].Image</td>
+                                                            <td>@Model[i].Description</td>
+                                                            <td><a asp-action="Edit" asp-route-id="@Model[i].Id">Sửa</a></td>
+                                                            <td><a asp-action="Delete" asp-route-id="@Model[i].Id">Xoá</a></td>
+                                                        </tr>
+                                                    }
+                                                    <tr>
+                                                        <td>Jena Gaines</td>
+                                                        <td>Office Manager</td>
+                                                        <td>London</td>
+                                                        <td>30</td>
+                                                        <td>2008/12/19</td>
+                                                        <td>$90,560</td>
+                                                        <td colspan="2">$90,560</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Jena Gaines</td>
+                                                        <td>Office Manager</td>
+                                                        <td>London</td>
+                                                        <td>30</td>
+                                                        <td>2008/12/19</td>
+                                                        <td>$90,560</td>
+                                                        <td colspan="2">$90,560</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Jena Gaines</td>
+                                                        <td>Office Manager</td>
+                                                        <td>London</td>
+                                                        <td>30</td>
+                                                        <td>2008/12/19</td>
+                                                        <td>$90,560</td>
+                                                        <td colspan="2">$90,560</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th>STT</th>
+                                                        <th>Tên</th>
+                                                        <th>Giá</th>
+                                                        <th>Ảnh</th>
+                                                        <th>Thông tin</th>
+                                                        <th colspan="2">Action</th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Zero config table end -->
+                        </div>
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section script {
+    <script src="/assets/plugins/data-tables/js/datatables.min.js"></script>
+    <script src="/assets/js/pages/data-basic-custom.js"></script>
+}
