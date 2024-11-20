@@ -1,7 +1,7 @@
 ﻿using Dtos.Categories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebMVC.Services;
+using WebMVC.Areas.Admin.Services;
 
 namespace WebMVC.Areas.Admin.Controllers
 {

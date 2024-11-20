@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Repositories;
+using WebMVC.Areas.Admin.Services;
 using WebMVC.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,6 +32,12 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.AccessDeniedPath = "/admin/account/login";
     });
 
+//Client
+builder.Services.AddScoped<IHomeClientService, HomeClientService>();
+builder.Services.AddScoped<ICategoryClientService, CategoryClientService>();
+
+
+//Admin
 builder.Services.AddScoped<IAccountApiService, AccountApiService>();
 builder.Services.AddScoped<ICategoryApiService, CategoryApiService>();
 builder.Services.AddScoped<IProductApiService, ProductApiService>();
@@ -59,7 +66,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
 	name: "Areas",
-	pattern: "{area:exists}/{controller=Admin}/{action=Index}/{id?}");
+	pattern: "{area:exists}/{controller=Account}/{action=Login}/{id?}");
 
 app.MapControllerRoute(
     name: "default",
